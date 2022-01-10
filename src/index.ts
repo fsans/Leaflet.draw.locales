@@ -18,8 +18,9 @@ import uk from "./locales/uk";
 import ar from "./locales/ar";
 import zh from "./locales/zh";
 import tr from "./locales/tr";
+import ca from "./locales/ca";
 
-export const languages: Language[] = ["ar", "am", "cs", "de", "en", "es", "fi", "fr", "hu", "it", "ka", "nl", "no", "pl", "pt", "ru", "sk", "uk", "zh", "tr"];
+export const languages: Language[] = ["ar", "am", "ca", "cs", "de", "en", "es", "fi", "fr", "hu", "it", "ka", "nl", "no", "pl", "pt", "ru", "sk", "uk", "zh", "tr"];
 
 /**
  * Localization for Leaflet.draw, changing between languages is now effortless.
@@ -87,10 +88,16 @@ export const drawLocales = (language: Language): DrawLocal => {
     }
     case "es":
     case "es-us":
-    case "es-ca":
     case "es-us.utf-8":
     case "spanish": {
       locale = es;
+      break;
+    }
+    case "ca":
+    case "es_ca":
+    case "ca.utf-8":
+    case "catalan": {
+      locale = ca;
       break;
     }
     case "sk":
@@ -220,7 +227,8 @@ export type Language =
   | "ar" | "ar-ae" | "english"
   | "fi" | "fi-fi" | "fi-fi.utf-8" | "finnish"
   | "fr" | "fr-us" | "fr-us.utf-8" | "french" | "fr-ca"
-  | "es" | "es-us" | "es-us.utf-8" | "spanish" | "es-ca"
+  | "es" | "es-us" | "es-us.utf-8" | "spanish"
+  | "ca" | "es-ca" | "ca.utf-8" | "catalan"
   | "sk" | "sk-sk" | "sk-sk.utf-8" | "slovak"
   | "pl" | "pl-pl" | "pl-pl.utf-8" | "polish"
   | "pt" | "pt-pt" | "pt-pt.utf-8" | "portuguese"
